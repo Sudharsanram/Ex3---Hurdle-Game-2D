@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class runraja : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     public float speed;
     public float jumpforce;
@@ -13,7 +13,7 @@ public class runraja : MonoBehaviour
         rb=GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         float moveinp=Input.GetAxisRaw("Horizontal");
@@ -25,10 +25,12 @@ public class runraja : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag( "destory"))   //if(other.gameObject.tag=="destory")
+        if(other.CompareTag("Destroy"))  
         {
             cc.coincount++;
             Destroy(other.gameObject); 
         }  
     }
 }   
+
+
